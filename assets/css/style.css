@@ -17,7 +17,7 @@ header::after{
   height: 100%;
   width:100%;
   transform: skewY(-4deg);
-  background-color: rgb(123, 64, 108);
+  background-color: #df7716;
   transform-origin: bottom left;
   z-index: -1;
 }
@@ -31,8 +31,8 @@ header::after{
 footer{
     width: 100%;
     height: 100px;
-    background-color: rgb(123, 64, 108);
-
+    background-color: #df7716;
+;
 }
 #ingredient{
     height: 40px;
@@ -43,4 +43,14 @@ button{
     justify-content: center;
     height: 40px;
     width: 200px;
+}
+
+.recipe-page {
+
+    display: none;
+}
+
+.random-page {
+
+    display: none;
 }
