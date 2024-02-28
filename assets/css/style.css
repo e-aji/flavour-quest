@@ -8,7 +8,9 @@ header{
   color: #efefef;
   overflow:hidden;
   position: relative;
-  background-color: #df7716;
+  background: url("../images/headerimage.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
   
 
 }
