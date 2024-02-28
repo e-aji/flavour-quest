@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(253, 253, 247);
+}
+header{
+  margin: 0; 
+  padding: 2em 5em 4em; 
+  color: #efefef;
+  overflow:hidden;
+  position: relative;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width:100%;
+  transform: skewY(-4deg);
+  background-color: rgb(123, 64, 108);
+  transform-origin: bottom left;
+  z-index: -1;
+}
+.main{
+    height: 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(123, 64, 108);
+
+}
+#ingredient{
+    height: 40px;
+    width: 250px;
+    justify-content: center;
+}
+button{
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+}
