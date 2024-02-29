@@ -1,4 +1,27 @@
-# hackers-in-the-matrix-week-7
+# FlavorQuest-Week-7-Project
+
+## Description 
 
 
-    I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
+## User Story
+
+
+
+## Acceptance Criteria
+
+
+
+## Usage 
+
+* 
+* 
+* 
+* 
+
+
+## Images 
+
+
+
+## Links 
+
