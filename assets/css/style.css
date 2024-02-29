@@ -12,6 +12,7 @@ body {
 }
 
 
+
 header {
     padding: 2em 5em 4em;
     color: #efefef;
@@ -21,13 +22,22 @@ header {
     background-color: black;
 }
 
+.logo {
+
+    height: 130px;
+    width: 130px;
+    
+}
+
 header h1 {
     text-transform: uppercase;
     font-size: 80px;
     font-weight: 700;
     text-align: center;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
+    margin-top: -120px;
+
 }
 
 header::before {
@@ -37,10 +47,10 @@ header::before {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 50%;
+    height: 60%;
     z-index: 0;
     transform: skewY(-4.5deg);
-    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("../images/headerimage.jpeg") no-repeat center center/cover, black; 
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("../images/pexels-engin-akyurt-2347311.jpeg") no-repeat center/cover, black; 
 }
 
 header h1::after {
@@ -51,7 +61,7 @@ header h1::after {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background-color: #c50000;
+    background-color: #FF512F;
 }
 
 header h1 span {
@@ -91,8 +101,8 @@ main {
     padding: 0 16px;
     height: 48px;
     background-color: #fff;
-    border: 1px solid #FF512F;
-    border-radius: 3px;
+    border: 1px solid #df7716;
+    border-radius: 5px;
     color: rgb(203, 85, 42);
     box-shadow: inset 0 1px 4px 0 rgba(197, 80, 44, 0.3);
     transition: all 100ms ease-in-out;
@@ -109,7 +119,7 @@ main {
     margin-top: 10px;
     text-align: center;
     text-transform: uppercase;
-    background: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);
+    background: linear-gradient(45deg, #FF512F 0%, #e38e16 51%, #FF512F 100%);
     color: white;
     border-radius: 10px;
     border: none;
@@ -179,13 +189,3 @@ footer {
     line-height: 170px;
     color: #fff;
 }
-
-/*.recipe-results {
-
-    display: none;
-}*/
-
-/*.random-page {
-
-    display: none;
-}*/
