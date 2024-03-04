@@ -12,7 +12,6 @@ body {
 }
 
 
-
 header {
     padding: 2em 5em 4em;
     color: #efefef;
@@ -158,20 +157,14 @@ main {
 }
 
 .recipe-results {
-    display: none;
-    
-}
 
-recipe-results {
-   
-    width: 500px;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: none; */
+    
 }
 
 .recipe-results h2 {
 
-    margin: 20px 0 20px;
+    margin: 40px 0 20px;
     font-size: 30px;    
     color: #df7716;
     text-align: center;
@@ -180,8 +173,7 @@ recipe-results {
 .recipe {
 
     margin: 30px 0;
-
-   
+    
 }
 
 .recipe-item {
@@ -196,6 +188,12 @@ recipe-results {
 
     width: 100%;
     display: block;
+   
+}
+
+.recipe-img:hover {
+    transition: all 0.3s ease-in-out;
+
 }
 
 .recipe-name {
@@ -203,6 +201,11 @@ recipe-results {
     padding: 25px 8px;
     font-size: 20px;
 
+}
+
+.meal-name {
+
+    min-height: 70px;
 }
 
 .recipe-button  {
@@ -218,7 +221,7 @@ recipe-results {
     width: 150px;
     margin: 15px 0;
     display: block;
-    text-align: center;
+   justify-content: center;
     transition: all 100ms ease-in-out;
 }
 

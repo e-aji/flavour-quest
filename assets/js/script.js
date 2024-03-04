@@ -7,6 +7,7 @@ var recipeButtonEl = document.getElementById("recipe-button");
 var recipeResultsEl = document.getElementById("recipe-results");
 var userInputEl = document.getElementById("user-input");
 var recipeDescriptionEl = document.getElementById("recipe-description");
+var recipeEl = document.getElementById("recipe");
 
 // Function to get list of meals that matches with the inputted ingredient
 function getRecipeResults() {
@@ -41,7 +42,7 @@ function getRecipeResults() {
                 </div>
                 </div>`;   
 
-                recipeResultsEl.innerHTML = `<h2> Your Recipe Results </h2>` + recipe;
+                recipeEl.innerHTML = recipe
             });
         } else {
             recipeResultsEl.innerHTML = "Sorry, No Recipe Results Can Be Found";
