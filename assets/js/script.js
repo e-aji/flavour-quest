@@ -1,4 +1,4 @@
-
+const RANDOM_RECIPE = "https://www.themealdb.com/api/json/v1/1/random.php";
 // Declaration of variables
 
 var searchButtonEl = document.getElementById("search-button");
@@ -8,6 +8,8 @@ var recipeResultsEl = document.getElementById("recipe-results");
 var userInputEl = document.getElementById("user-input");
 var recipeDescriptionEl = document.getElementById("recipe-description");
 var recipeEl = document.getElementById("recipe");
+var randomButtonEl = document.getElementById("randomBtn");
+var goBackBtnEl = document.getElementById("goBackBtn");
 
 // Function to get list of meals that matches with the inputted ingredient
 function getRecipeResults() {
@@ -92,6 +94,44 @@ function closeRecipeModal () {
 
 };
 
+function randomSearch(){
+    document.getElementById("recipe-results").style.display = "none";
+
+    console.log("Random recipe");
+    var randomReciperUrl = RANDOM_RECIPE;
+
+    fetch(randomReciperUrl)
+    .then(function (response){
+        return response.json();
+    })
+    .then(function (data){
+        console.log(data);
+
+        displayData(data)
+    });
+}
+
+function displayData(data){
+    document.getElementById("randomBtn").style.display = "none";
+    document.getElementById("ingredient-search").style.display = "none";
+    document.getElementById("search-btn").style.display = "none";
+    document.getElementById("goBackBtn").style.display = "block";
+
+    const listItem = document.createElement("li");
+    listItem.classList = document.createElement("li");
+    listItem.classList.add("randomResults");
+
+    listItem.innerHTML = `
+    <div class="randomRecipeName">${data.meals[0].strMeal}</div>
+    <div class="cuisineName">${data.meals[0].strArea} Cuisine</div>
+    <div class="randomRecipeImg"><img id="imgRandomRecipe" src="${data.meals[0].strMealThumb}"></div>
+    <div  class="randomRecipUrl"><a href = "${data.meals[0].strYoutube}"  target="_blank">Click Me to see the recipe 👩‍🍳</a></div>;
+    `
+
+    document.getElementById("random-results").appendChild(listItem);
+
+}
+
 // Load saved user input when page is refreshed (so they can see what they searched previously)
 
 window.addEventListener("load", function() {
@@ -108,6 +148,12 @@ window.addEventListener("load", function() {
     }
 };
 
+function reloadMainPage(){
+    console.log("hello");
+}
+
 searchButtonEl.addEventListener("click", getRecipeResults);
 
 xEl.addEventListener("click", closeRecipeModal);
+randomButtonEl.addEventListener("click", randomSearch);
+goBackBtnEl.addEventListener("click", reloadMainPage);
