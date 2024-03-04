@@ -94,6 +94,7 @@ function closeRecipeModal () {
 
 };
 
+// Function to get a random recipe
 function randomSearch(){
     document.getElementById("recipe-results").style.display = "none";
 
@@ -110,6 +111,8 @@ function randomSearch(){
         displayData(data)
     });
 }
+
+//Function to display the random recipe results
 
 function displayData(data){
     document.getElementById("randomBtn").style.display = "none";
