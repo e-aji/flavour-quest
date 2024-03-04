@@ -12,7 +12,6 @@ body {
 }
 
 
-
 header {
     padding: 2em 5em 4em;
     color: #efefef;
@@ -61,7 +60,7 @@ header h1::after {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background-color: #FF512F;
+    background-color: #df7716;
 }
 
 header h1 span {
@@ -88,6 +87,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin-top: 80px;
+
 }
 
 .user-input input,
@@ -97,7 +97,9 @@ main {
 
 .ingredient {
     width: 40%;
+    font-family: "Raleway", sans-serif;
     margin: 0 10px ;
+    text-align: center;
     padding: 0 16px;
     height: 48px;
     background-color: #fff;
@@ -116,12 +118,11 @@ main {
 .search-button,
 .random-button {
     padding: 15px 30px;
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: center;
     text-transform: uppercase;
     background: linear-gradient(45deg, #FF512F 0%, #e38e16 51%, #FF512F 100%);
     color: white;
-    border-radius: 10px;
     border: none;
     font-weight: 700;
     cursor: pointer;
@@ -253,7 +254,6 @@ a{
     margin-top: 30px;
     display: none;
 
-
 }
 
 .random-results h2 {
@@ -269,6 +269,102 @@ footer {
     height: 170px;
     background-color: #df7716;
     text-align: center;
+    font-weight: 600;
+    font-size: 20px;
     line-height: 170px;
     color: #fff;
+    display: none;
 }
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1156px) {
+
+
+    .recipe-description {
+
+        width: 800px;    
+        height: 800px;
+        margin: 0;
+
+    }
+
+    .recipe-instructions {
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
+}
+
+
+
+@media screen and (max-width: 1000px) {
+
+    #recipe {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        grid-auto-rows: minmax(100px, auto);
+
+    } 
+
+}
+
+@media screen and (max-width: 768px) {
+    /*header h1 {
+
+        font-size: 40px;
+        text-align: center;
+    }*/
+
+    .user-input {
+        width: 100%;
+    }
+
+    #recipe {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .recipe-item {
+
+        margin: 0;
+    }
+
+    .recipe-description {
+
+        width: 500px;  
+        height: 900px;  
+        margin: 0;
+    }
+
+
+    .recipe-instructions {
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    .user-input {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    #recipe {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+    
+}
+
