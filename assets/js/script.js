@@ -12,8 +12,10 @@ var randomButtonEl = document.getElementById("randomBtn");
 var goBackBtnEl = document.getElementById("goBackBtn");
 
 // Function to get list of meals that matches with the inputted ingredient
+
+
 function getRecipeResults() {
- 
+
     var ingredientSearch = document.getElementById("ingredient-search").value.trim();
 
     // Save user input in local storage
@@ -25,7 +27,7 @@ function getRecipeResults() {
     fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
-            
+
         userInputEl.style.display = "none";
         recipeResultsEl.style.display = "block";
 
@@ -44,7 +46,7 @@ function getRecipeResults() {
                 </div>
                 </div>`;   
 
-                recipeEl.innerHTML = recipe
+                recipeEl.innerHTML = recipe;
             });
         } else {
             recipeResultsEl.innerHTML = "Sorry, No Recipe Results Can Be Found";
@@ -53,7 +55,6 @@ function getRecipeResults() {
 
         }); 
 };
-
 // Function to get a description of the recipe including instructions, ingredients, image and video link when see recipe button is clicked
 function getRecipeDescription(event) {
     let mealName = event.target.dataset.name;
@@ -64,7 +65,7 @@ function getRecipeDescription(event) {
         .then((data) => {
             showRecipeDescription(data.meals, mealName);
             recipeResultsEl.style.display = "block";
-            
+
         })
         .catch((error) => {
             console.error('Error fetching recipe description:', error);
@@ -137,7 +138,7 @@ function displayData(data){
 
 };
 
-// Load saved user input when page is refreshed (so they can see what they searched previously)
+/// Load saved user input when page is refreshed (so they can see what they searched previously)
 
 window.addEventListener("load", function() {
     var savedIngredientSearch = localStorage.getItem("ingredientSearch");
@@ -146,12 +147,14 @@ window.addEventListener("load", function() {
     }
 });
 
+
  // If the user clicks anywhere outside the modal, close modal
  window.onclick = function(event) {
     if (event.target !== recipeDescriptionEl) {
       recipeDescriptionEl.style.display = "none";
     }
 };
+
 
 function reloadMainPage(){
     console.log("hello");
