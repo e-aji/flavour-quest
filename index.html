@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flavor Quest</title>
+    <title>🥘FlavorQuest</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     
@@ -25,7 +25,7 @@
         <div class="user-input">
             <input type="text" class="ingredient" id="ingredient-search" placeholder="Enter your ingredient">
             <button type="submit" class="search-button"  id="search-btn">Search</button>
-            <div><button class="random-button" id="random-btn">Random Search</button></div>
+            <div><button class="randomButton" id="randomBtn">Random Search</button></div>
 
         </div>
         
@@ -42,8 +42,11 @@
                     </div>
 
                    <div class="recipe-name"> 
-                    <h3> Meal Name </h3>
+                    <div id="mealName">
+                        <h3> Meal Name </h3>
                     <a href="#" class="recipe-button"> Get Recipe </a>
+                    </div>
+                    
                 </div>
             </div>
             </div>
@@ -51,10 +54,8 @@
 
         </div>
 
-        <div class="random-results" id="random-results">
-
-            <h2> Random Recipes </h2>
-
+        <div class="randomResults" id="random-results">
+            <button type="back" class="backBtn"  id="goBackBtn">Go Back</button>;
         </div>
 
     </main>
