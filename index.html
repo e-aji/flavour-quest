@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🥘FlavorQuest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@100..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
 </head>
+
 <body>
-        <header>
+    <header>
 
-            <div class="header-image">
-                <img src="assets/images/logo.png" class="logo" alt="logo">
+        <div class="header-image">
+            <img src="assets/images/logo.png" class="logo" alt="logo">
 
-                <h1>FlavorQuest
-                <span>The Ingredients Recipe App </span>
-                </h1>
-            </div>
-        </header>
-   
+            <h1>FlavorQuest <span>The Ingredients Recipe App </span></h1>
+        </div>
+    </header>
+
     <main>
 
         <!---  User Input Field --->
         <div class="user-input" id="user-input">
             <input type="text" class="ingredient" id="ingredient-search" placeholder="Enter Your Main Ingredient">
-            <button type="submit" class="search-button"  id="search-button">Search</button>
-            <button class="random-button" id="random-button">Random Search</button>
-
+            <button type="submit" class="search-button" id="search-button">Search</button>
+            <button class="random-button" id="randomBtn">Random Search</button>
         </div>
 
         <!---  Recipe Results --->
-        <div id="recipe-results" class="recipe-results">      
+        <div id="recipe-results" class="recipe-results">
 
             <h2> Your Recipe Results </h2>
-            <div id="recipe" class="recipe"></div>    
+            <div id="recipe" class="recipe"></div>
 
         </div>
 
         <!---  Random Recipe Result --->
+        <div class="random-results" id="random-results"></div>
 
-        <div class="random-results" id="random-results">
-            <h2> Random Recipes </h2>
-
-        </div>
-
-         <!---  Recipe Description --->
-
-        <div class="recipe-description" id="recipe-description"> 
+        <!---  Recipe Description --->
+        <div class="recipe-description" id="recipe-description">
 
             <!---  Recipe Description Close Button --->
 
             <div class="cancel">
-
                 <div class="x" id="x">&#x2716</div>
-              </div>
+            </div>
 
             <h2 class="recipe-label" id="recipe-label"> Name of Recipe Here </h2>
             <p class="recipe-category" id="recipe-category"> Name of Category Here </p>
-   
+
             <div class="recipe-instructions" id="recipe-instructions">
                 <h3> Recipe Instructions </h3>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
 
-            <div class="recipe-modal-image" id="recipe-modal-image"> 
+            <div class="recipe-modal-image" id="recipe-modal-image">
                 <img src="assets/images/churros.jpeg" alt="Image of recipe">
             </div>
             <div class="recipe-vid-link" id="recipe-vid-link">
@@ -73,23 +68,21 @@
 
         </div>
 
-            <div class="randomResults" id="randomBtn">
-                <button type="back" class="backBtn"  id="goBackBtn">Go Back</button>;
-            </div>
+        <div class="randomResults" id="random-results">
+            <button type="back" class="backBtn" id="goBackBtn">Go Back</button>
+        </div>
     </main>
-    
+
     <footer>
         ©FlavorQuest Ltd
     </footer>
 
 
-    <script
-    src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
     <script src="assets/js/script.js"></script>
 
 </body>
+
 </html>
