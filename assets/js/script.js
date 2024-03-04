@@ -96,6 +96,8 @@ function closeRecipeModal () {
 
 // Function to get a random recipe
 function randomSearch(){
+
+    console.log("hi");
     document.getElementById("recipe-results").style.display = "none";
 
     console.log("Random recipe");
@@ -110,7 +112,7 @@ function randomSearch(){
 
         displayData(data)
     });
-}
+};
 
 //Function to display the random recipe results
 
@@ -133,7 +135,7 @@ function displayData(data){
 
     document.getElementById("random-results").appendChild(listItem);
 
-}
+};
 
 // Load saved user input when page is refreshed (so they can see what they searched previously)
 

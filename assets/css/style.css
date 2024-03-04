@@ -246,23 +246,6 @@ a{
 
 }
 
-.random-results {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    display: none;
-
-}
-
-.random-results h2 {
-
-    margin-bottom: 20px;
-    font-size: 30px;
-
-}
-
 footer {
     bottom: 0;
     width: 100%;
