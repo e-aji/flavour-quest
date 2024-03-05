@@ -11,9 +11,9 @@ var recipeEl = document.getElementById("recipe");
 var randomButtonEl = document.getElementById("randomBtn");
 var goBackBtnEl = document.getElementById("goBackBtn");
 
+// Function to not show any results if there is no input in the user input field
+
 // Function to get list of meals that matches with the inputted ingredient
-
-
 function getRecipeResults() {
 
     var ingredientSearch = document.getElementById("ingredient-search").value.trim();
@@ -120,7 +120,7 @@ function randomSearch(){
 function displayData(data){
     document.getElementById("randomBtn").style.display = "none";
     document.getElementById("ingredient-search").style.display = "none";
-    document.getElementById("search-btn").style.display = "none";
+    document.getElementById("search-button").style.display = "none";
     document.getElementById("goBackBtn").style.display = "block";
 
     const listItem = document.createElement("li");
@@ -141,7 +141,7 @@ function displayData(data){
 /// Load saved user input when page is refreshed (so they can see what they searched previously)
 
 window.addEventListener("load", function() {
-    var savedIngredientSearch = localStorage.getItem("ingredientSearch");
+    var savedIngredientSearch = localStorage.getItem("ingredientSearch") || "";
     if (savedIngredientSearch) {
         document.getElementById("ingredient-search").value = savedIngredientSearch;
     }
