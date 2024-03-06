@@ -11,10 +11,6 @@ var recipeDescriptionEl = document.getElementById("recipe-description");
 var recipeEl = document.getElementById("recipe");
 var randomButtonEl = document.getElementById("randomBtn");
 var goBackBtnEl = document.getElementById("goBackBtn");
-//var ingredientSearchEl = document.getElementById("ingredient-search");
-
-//document.getElementById("optionDropDown").style.display = "none";
-//window.onload  = document.getElementById('ingredient-search').innerHTML = "";
 
 // Function to not show any results if there is no input in the user input field
 function initFoods(){
@@ -44,7 +40,7 @@ function initFoods(){
 function selectOption() {
     let selectedValue = optionDropDown.options[optionDropDown.selectedIndex].text;
     console.log(selectedValue);
-    //document.getElementById("ingredient-search").value = selectedValue;
+    
     document.getElementById("optionDropDown").style.display = "none";
  }
 
