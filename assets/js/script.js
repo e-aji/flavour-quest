@@ -1,4 +1,5 @@
 const RANDOM_RECIPE = "https://www.themealdb.com/api/json/v1/1/random.php";
+const AUTO_COMPLETE = "https://wpdev3.com/flavour-quest/api/foods.json";
 // Declaration of variables
 
 var searchButtonEl = document.getElementById("search-button");
@@ -10,8 +11,205 @@ var recipeDescriptionEl = document.getElementById("recipe-description");
 var recipeEl = document.getElementById("recipe");
 var randomButtonEl = document.getElementById("randomBtn");
 var goBackBtnEl = document.getElementById("goBackBtn");
+var ingredientSearchEl = document.getElementById("ingredient-search");
+
+document.getElementById("optionDropDown").style.display = "none";
+window.onload  = document.getElementById('ingredient-search').innerHTML = "";
 
 // Function to not show any results if there is no input in the user input field
+
+
+//Function for auto complete
+
+function autoCompleteIngredientName(){
+    document.getElementById("optionDropDown").style.display = "block";
+    
+    var autoCompleteIngredientTest = [
+        "Ackee",
+        "Almond",
+        "Anchovies",
+        "Apples",
+        "Apricots",
+        "Asparagus",
+        "Aubergine ",
+        "Avacado ",
+        "Bananas",
+        "Bay Leaves",
+        "Beans",
+        "Black beans",
+        "Blackberries",
+        "Blue cheese",
+        "Bread",
+        "Broccoli",
+        "Brussel Sprouts ",
+        "Buttermilk",
+        "Butternut Squash",
+        "Blueberries ",
+        "Beef",
+        "Basil",
+        "Ball Peppers",
+        "Cabbage ",
+        "Carrot",
+        "Casserole",
+        "Celery",
+        "Chamomile",
+        "Cheese",
+        "Cherries",
+        "Chicken",
+        "Chickpea",
+        "Chives",
+        "Coconut ",
+        "Chia Seeds",
+        "Cucumber",
+        "Cranberry",
+        "Cassava ",
+        "Cajon pea ",
+        "Cauliflower",
+        "Corn",
+        "Chili",
+        "Dates",
+        "Dragonfruit",
+        "Dumpling",
+        "Duck",
+        "Damson",
+        "Edamame ",
+        "Eggs",
+        "Éclair",
+        "Empanadas",
+        "Elderberries",
+        "Escarole",
+        "Endive",
+        "Enchiladas",
+        "Falafel",
+        "Feta Cheese",
+        "Flaxseed",
+        "Flour",
+        "Flatbread",
+        "Fondue ",
+        "Fish",
+        "Fajitas",
+        "Fennel",
+        "Fig",
+        "Freekah",
+        "Fritter",
+        "Fufu",
+        "Garlic",
+        "Ginger",
+        "Granola ",
+        "Green Beans ",
+        "Green Bell Pepper",
+        "Gammon",
+        "Garlic bread",
+        "Greek yoghurt",
+        "Haddock",
+        "Honey",
+        "Hummus",
+        "Honeynut Squash",
+        "Haricot Beans",
+        "Haloumi",
+        "Haddock Fish",
+        "Iceberg Lettuce",
+        "Idli",
+        "Ice cream",
+        "Imarti",
+        "Irish cream",
+        "Idiyappam",
+        "Jalapeno",
+        "Jam",
+        "Jerky",
+        "Kidney Bean",
+        "Kingfish",
+        "Kingcrab",
+        "Kiwi",
+        "Kale",
+        "Kedgeree",
+        "lamb",
+        "leek",
+        "lemon",
+        "lemongrass",
+        "maple syrup",
+        "macadamia nuts",
+        "marscarpone",
+        "molasses",
+        "monkfish",
+        "oats",
+        "okra",
+        "olive",
+        "oregano",
+        "parmesan",
+        "parsley",
+        "parsnip",
+        "pear",
+        "prosciutto",
+        "quails",
+        "quinoa",
+        "radish",
+        "raisins",
+        "rhubarb",
+        "rice",
+        "romaine",
+        "salmon",
+        "sage",
+        "sardines",
+        "spinach",
+        "tamarind",
+        "tahini",
+        "tapioca",
+        "tomato",
+        "tuna",
+        "ube",
+        "valerian",
+        "vanilla",
+        "veal",
+        "vermicelli",
+        "walnuts",
+        "wasabi",
+        "watercress",
+        "xanthan gum"
+    ];
+
+    var ingredientName = ingredientSearchEl.value;
+    document.getElementById("optionDropDown").innerHTML = "";
+
+    const ul = document.getElementById("optionDropDown");
+    
+    if(ingredientName.length > 1){
+        console.log(ingredientName);
+
+    for (i = 0; i < autoCompleteIngredientTest.length; i++){
+        let option = document.createElement("option");
+
+       if( autoCompleteIngredientTest[i].toUpperCase().startsWith(ingredientName.toUpperCase())){
+        option.setAttribute( autoCompleteIngredientTest[i], autoCompleteIngredientTest[i]);
+        let optionText = document.createTextNode( autoCompleteIngredientTest[i]);
+        option.appendChild(optionText);
+console.log(option);
+       // li.innerHTML = autoCompleteIngredientTest[i];
+        ul.appendChild(option);
+       }
+    }
+}
+
+
+    
+  // var autoCompleteIngredientUrl = AUTO_COMPLETE;
+
+    /*fetch(autoCompleteIngredientUrl)
+    .then(function (response){
+        console.log(response);
+        return response.json();
+    })
+    .then(function (data){
+        console.log(data);    
+    });*/
+}
+
+function selectOption() {
+    let selectedValue = optionDropDown.options[optionDropDown.selectedIndex].text;
+    console.log(selectedValue);
+    document.getElementById("ingredient-search").value = selectedValue;
+    document.getElementById("optionDropDown").style.display = "none";
+ }
 
 // Function to get list of meals that matches with the inputted ingredient
 function getRecipeResults() {
@@ -98,10 +296,8 @@ function closeRecipeModal () {
 // Function to get a random recipe
 function randomSearch(){
 
-    console.log("hi");
     document.getElementById("recipe-results").style.display = "none";
 
-    console.log("Random recipe");
     var randomReciperUrl = RANDOM_RECIPE;
 
     fetch(randomReciperUrl)
@@ -165,3 +361,4 @@ searchButtonEl.addEventListener("click", getRecipeResults);
 xEl.addEventListener("click", closeRecipeModal);
 randomButtonEl.addEventListener("click", randomSearch);
 goBackBtnEl.addEventListener("click", reloadMainPage);
+ingredientSearchEl.addEventListener("keypress", autoCompleteIngredientName);
