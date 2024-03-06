@@ -54,17 +54,6 @@ header::before {
     background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("../images/pexels-engin-akyurt-2347311.jpeg") no-repeat center/cover, black; 
 }
 
-header h1::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 2px;
-    background-color: #df7716;
-}
-
 header h1 span {
     font-size: 20px;
     font-weight: 500;
@@ -167,10 +156,12 @@ main {
 }
 
 .randomRecipeName{
-    font-size: 30px;
+    font-size: 20px;
+    min-height: 60px;
     text-align: center;
     font-weight: 400;
     margin-bottom: 20px;
+
 }
 
 .cuisineName{
@@ -263,7 +254,7 @@ main {
 .meal-name {
 
     min-height: 60px;
-    font-size: 22px;
+    font-size: 20px;
 
 }
 
@@ -464,6 +455,7 @@ a:hover {
     header {
 
         padding: 9.6rem;
+        text-align: center; 
     }
 
     header h1 {
@@ -472,44 +464,35 @@ a:hover {
 
     }
 
-    header h1::after, header h1 span {
+}
+  
 
-        display: none;
+@media screen and (max-width: 768px) {
+   
+    header {
+
+        text-align: center;
     }
 
-}
+    
+    header h1 span {
 
-
-@media screen and (max-width: 850px) {
-
-    .logo {
-
-        display: block;
-        align-items: center;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 100%;
-        width: 100%;
-        margin: 0;
+        display: none;
     }
 
     header h1 {
 
-        display: none;
+        font-size: 80px;
+
     }
 
-
-}    
-
-@media screen and (max-width: 768px) {
-   
     .user-input {
         width: 100%;
     }
 
     #recipe {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 20px;
         grid-auto-rows: minmax(100px, auto);
     }
@@ -536,10 +519,47 @@ a:hover {
 
     .backBtn {
 
-        left: 50%;
-        transform: translateX(-50%);
+        right: 0;
         height: 45px ;
     }
+
+    .meal-name {
+
+        font-size: 16pxpx;
+        min-height: 40px;
+    }
+
+    .recipe-button {
+
+        font-size: 15px;
+        width: 60%;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+
+    header {
+
+        text-align: center;
+
+
+}
+    header h1 {
+
+        font-size: 30px;
+        text-align: center;
+    
+    }
+
+    .recipe-description {
+
+        width: 300px;  
+        height: 900px;  
+        margin: 0;
+    }
+
 }
 
 @media screen and (min-width: 992px){
@@ -552,6 +572,12 @@ a:hover {
 }
 
 @media screen and (min-width: 768px) {
+  
+
+    header h1 {
+        font-size: 60px;
+        text-align: center;
+    }
 
     .recipe {
         display: grid;
@@ -564,3 +590,37 @@ a:hover {
     }
 
 }
+
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+
+
+        header{
+
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+}
+
+
+    @media only screen and (min-width: 370px) and (max-width: 599px) {
+
+
+        header{
+
+            text-align: center;
+            margin: 0;
+            
+        }
+
+        header h1 {
+            font-size: 35px;
+            text-align: center;
+            margin-left: -60px;
+            
+        }
+
+    }
