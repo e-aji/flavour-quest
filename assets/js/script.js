@@ -14,10 +14,14 @@ var goBackBtnEl = document.getElementById("goBackBtn");
 var ingredientSearchEl = document.getElementById("ingredient-search");
 
 document.getElementById("optionDropDown").style.display = "none";
-window.onload  = document.getElementById('ingredient-search').innerHTML = "";
 
 // Function to not show any results if there is no input in the user input field
 
+function hideResults() {
+    if (document.getElementById("ingredient-search").value == "") {
+        document.getElementById("recipe-results").style.display = "none";
+    }
+}
 
 //Function for auto complete
 
@@ -183,13 +187,12 @@ function autoCompleteIngredientName(){
         option.setAttribute( autoCompleteIngredientTest[i], autoCompleteIngredientTest[i]);
         let optionText = document.createTextNode( autoCompleteIngredientTest[i]);
         option.appendChild(optionText);
-console.log(option);
+        console.log(option);
        // li.innerHTML = autoCompleteIngredientTest[i];
         ul.appendChild(option);
        }
     }
 }
-
 
     
   // var autoCompleteIngredientUrl = AUTO_COMPLETE;
@@ -227,7 +230,9 @@ function getRecipeResults() {
         .then((data) => {
 
         userInputEl.style.display = "none";
+        goBackBtnEl.style.display = "block";
         recipeResultsEl.style.display = "block";
+
 
         let recipe = "";
         if (data.meals) {
@@ -275,7 +280,7 @@ function showRecipeDescription(mealRecipe, mealName) {
     let recipes = mealRecipe[0];
     recipeDescriptionEl.style.display = "block";
     document.getElementById('recipe-label').innerHTML = mealName;
-    document.getElementById('recipe-category').innerHTML = recipes.strCategory;
+    document.getElementById('recipe-category').innerHTML = "<h2> Recipe Category:</h2> "  + recipes.strCategory;
     document.getElementById('recipe-instructions').innerHTML = "<h2>Recipe Instructions:</h2>" + recipes.strInstructions.split('\n').map(instruction => `<p>${instruction}</p>`).join(''); // makes sure the instructions are split by paragraphs
     document.getElementById('recipe-modal-image').innerHTML = `<img src="${recipes.strMealThumb}" alt="Image of ${mealName}">`;
     if(recipes.strYoutube == "") {
@@ -314,9 +319,7 @@ function randomSearch(){
 //Function to display the random recipe results
 
 function displayData(data){
-    document.getElementById("randomBtn").style.display = "none";
-    document.getElementById("ingredient-search").style.display = "none";
-    document.getElementById("search-button").style.display = "none";
+    document.getElementById("user-input").style.display = "none";
     document.getElementById("goBackBtn").style.display = "block";
 
     const listItem = document.createElement("li");
@@ -324,10 +327,12 @@ function displayData(data){
     listItem.classList.add("randomResults");
 
     listItem.innerHTML = `
-    <div class="randomRecipeName">${data.meals[0].strMeal}</div>
-    <div class="cuisineName">${data.meals[0].strArea} Cuisine</div>
+    <div class="recipe-item"> 
     <div class="randomRecipeImg"><img id="imgRandomRecipe" src="${data.meals[0].strMealThumb}"></div>
-    <div  class="randomRecipUrl"><a href = "${data.meals[0].strYoutube}"  target="_blank">Click Me to see the recipe 👩‍🍳</a></div>;
+    <div class="randomRecipeName">${data.meals[0].strMeal}
+    <button class = "randomRecipeButton" id="randomRecipeButton" data-name="${data.meals[0].strMeal}" data-id="${data.meals[0].idMeal}" onclick="getRecipeDescription(event)"> See Recipe </button>
+    </div>
+    </div>
     `
 
     document.getElementById("random-results").appendChild(listItem);
@@ -353,6 +358,7 @@ window.addEventListener("load", function() {
 
 
 function reloadMainPage(){
+
     console.log("hello");
 }
 
