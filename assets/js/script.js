@@ -11,8 +11,10 @@ var recipeDescriptionEl = document.getElementById("recipe-description");
 var recipeEl = document.getElementById("recipe");
 var randomButtonEl = document.getElementById("randomBtn");
 var goBackBtnEl = document.getElementById("goBackBtn");
+var ingredientSearchEl = document.getElementById("ingredient-search");
 
-// Function to not show any results if there is no input in the user input field
+// Function to initialise the autocomplete feature
+// Fetches data from an API endpoint and populates the autocomplete list with the retrieved data
 function initFoods(){
 
     const headers = new Headers();
@@ -37,17 +39,26 @@ function initFoods(){
         .catch((error) => console.error(error));
 }
 
+// Function to handle the selection of an option from a dropdown list.
 function selectOption() {
     let selectedValue = optionDropDown.options[optionDropDown.selectedIndex].text;
     console.log(selectedValue);
+
+    // Hide the dropdown list after an option is selected
     
     document.getElementById("optionDropDown").style.display = "none";
  }
 
 // Function to get list of meals that matches with the inputted ingredient
-function getRecipeResults() {
+function getRecipeResults(e) {
+
+    e.preventDefault();
 
     var ingredientSearch = document.getElementById("ingredient-search").value.trim();
+
+    if (ingredientSearch === "") {
+        return;
+    };
 
     // Save user input in local storage
 
@@ -129,8 +140,11 @@ function closeRecipeModal () {
 };
 
 // Function to get a random recipe
-function randomSearch(){
+function randomSearch(e){
 
+    e.preventDefault();
+
+    console.log("random");
     document.getElementById("recipe-results").style.display = "none";
 
     var randomReciperUrl = RANDOM_RECIPE;
@@ -172,10 +186,11 @@ function displayData(data){
 
 /// Load saved user input when page is refreshed (so they can see what they searched previously)
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function(e) {
+   
     var savedIngredientSearch = localStorage.getItem("ingredientSearch") || "";
     if (savedIngredientSearch) {
-        //document.getElementById("ingredient-search").value = savedIngredientSearch;
+        document.getElementById("ingredient-search").value = savedIngredientSearch;
     }
 });
 
@@ -187,17 +202,16 @@ window.addEventListener("load", function() {
     }
 };
 
+function goBack() {
+        window.history.back();
+      }
 
-function reloadMainPage(){
+    goBack();
 
-    console.log("hello");
-}
 
-searchButtonEl.addEventListener("click", getRecipeResults);
-
+searchButtonEl.addEventListener("click", getRecipeResults);    
 xEl.addEventListener("click", closeRecipeModal);
 randomButtonEl.addEventListener("click", randomSearch);
-goBackBtnEl.addEventListener("click", reloadMainPage);
-
+goBackBtnEl.addEventListener("click", goBack);
 
 initFoods();
