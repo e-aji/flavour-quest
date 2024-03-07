@@ -122,7 +122,7 @@ function showRecipeDescription(mealRecipe, mealName) {
     let recipes = mealRecipe[0];
     recipeDescriptionEl.style.display = "block";
     document.getElementById('recipe-label').innerHTML = mealName;
-    document.getElementById('recipe-category').innerHTML = "<h2> Category: </h2>" + recipes.strCategory;
+    document.getElementById('recipe-category').innerHTML = recipes.strCategory;
     document.getElementById('recipe-instructions').innerHTML = "<h2>Recipe Instructions:</h2>" + recipes.strInstructions.split('\n').map(instruction => `<p>${instruction}</p>`).join(''); // makes sure the instructions are split by paragraphs
     document.getElementById('recipe-modal-image').innerHTML = `<img src="${recipes.strMealThumb}" alt="Image of ${mealName}">`;
     if(recipes.strYoutube == "") {
@@ -205,16 +205,15 @@ window.addEventListener("load", function(e) {
 };
 
 // If go back button is clicked, go back to previous page
-document.addEventListener("DOMContentLoaded", function() {
 
-    function goBack() {
-        console.log("go back");
-        window.history.back();
-    }
+function goBack() {
 
-    goBackBtnEl.addEventListener("click", goBack);
+    userInputEl.style.display = "flex";
+    randomResultsEl.style.display = "none";
+    goBackBtnEl.style.display = "none";
+    recipeResultsEl.style.display = "none";
 
-});    
+};    
 
 searchButtonEl.addEventListener("click", getRecipeResults);    
 xEl.addEventListener("click", closeRecipeModal);
