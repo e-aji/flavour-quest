@@ -34,17 +34,6 @@ As a developer, we want to solve the problem of:
 
     * It's done when I click the Random Recipe button, a random recipe appears mentioning which cuisine, and when clicked, a YouTube channel is opened showing the recipe
 
-## Challenges
-
-    * The most difficult challenge we faced was in git merge. It was done many times.
-
-## Future Direction
-
-
-
-
-
-
 ## Usage 
 
 * 
@@ -55,13 +44,29 @@ As a developer, we want to solve the problem of:
 
 ## Images 
 
+**Search Page** 
+
+<img width="1440" alt="FlavorQuest - Search Page" src="https://github.com/e-aji/flavour-quest-week-7/assets/156595423/ba5bdf81-3978-44d2-955d-e13bdc77f44b">
 
 
-## Links 
+
+**Recipe Results Page** 
+
+
+<img width="1440" alt="FlavorQuest - Recipe Results Page" src="https://github.com/e-aji/flavour-quest-week-7/assets/156595423/4d3184f4-1d8b-4862-ae1a-5ffb81d53187">
 
 
 
-## Images 
+**Random Results Page** 
+
+
+<img width="1440" alt="FlavorQuest - Random Results Page" src="https://github.com/e-aji/flavour-quest-week-7/assets/156595423/da56626f-4a76-46aa-9110-ec5224c15d9c">
+
+
+
+**Recipe Description Modal** 
+
+<img width="1298" alt="FlavorQuest - Recipe Description Modal" src="https://github.com/e-aji/flavour-quest-week-7/assets/156595423/4a82e136-e471-4cd0-b75b-d94b7d2728f9">
 
 
 
