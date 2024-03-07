@@ -31,14 +31,6 @@ As a developer, we want to solve the problem of:
 
     * It's done when I click the Random Recipe button, a random recipe appears mentioning which cuisine, and when clicked, a YouTube channel is opened showing the recipe
 
-## Usage 
-
-* 
-* 
-* 
-* 
-
-
 ## Images 
 
 **Search Page** 
