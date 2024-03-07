@@ -61,4 +61,4 @@ As a developer, we want to solve the problem of:
 
 ## Links 
 
-Link to deployed application - 
+Link to deployed application - https://e-aji.github.io/flavour-quest/ 

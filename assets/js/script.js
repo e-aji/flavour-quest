@@ -218,5 +218,6 @@ function goBack() {
 searchButtonEl.addEventListener("click", getRecipeResults);    
 xEl.addEventListener("click", closeRecipeModal);
 randomButtonEl.addEventListener("click", randomSearch);
+goBackBtnEl.addEventListener("click", goBack);
 
 initFoods();
