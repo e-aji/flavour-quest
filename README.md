@@ -1,4 +1,4 @@
-# FlavorQuest-Week-7-Project
+# FlavorQuest
 
 ## Description 
 
