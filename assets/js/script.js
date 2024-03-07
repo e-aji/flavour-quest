@@ -12,6 +12,7 @@ var recipeEl = document.getElementById("recipe");
 var randomButtonEl = document.getElementById("randomBtn");
 var goBackBtnEl = document.getElementById("goBackBtn");
 var ingredientSearchEl = document.getElementById("ingredient-search");
+var randomResultsEl = document.getElementById("random-results");
 
 // Function to initialise the autocomplete feature
 // Fetches data from an API endpoint and populates the autocomplete list with the retrieved data
@@ -42,7 +43,6 @@ function initFoods(){
 // Function to handle the selection of an option from a dropdown list.
 function selectOption() {
     let selectedValue = optionDropDown.options[optionDropDown.selectedIndex].text;
-    console.log(selectedValue);
 
     // Hide the dropdown list after an option is selected
     
@@ -71,6 +71,7 @@ function getRecipeResults(e) {
         .then((data) => {
 
         userInputEl.style.display = "none";
+        randomResultsEl.style.display = "none";
         goBackBtnEl.style.display = "block";
         recipeResultsEl.style.display = "block";
 
@@ -121,7 +122,7 @@ function showRecipeDescription(mealRecipe, mealName) {
     let recipes = mealRecipe[0];
     recipeDescriptionEl.style.display = "block";
     document.getElementById('recipe-label').innerHTML = mealName;
-    document.getElementById('recipe-category').innerHTML = "<h2> Recipe Category:</h2> "  + recipes.strCategory;
+    document.getElementById('recipe-category').innerHTML = "<h2> Category: </h2>" + recipes.strCategory;
     document.getElementById('recipe-instructions').innerHTML = "<h2>Recipe Instructions:</h2>" + recipes.strInstructions.split('\n').map(instruction => `<p>${instruction}</p>`).join(''); // makes sure the instructions are split by paragraphs
     document.getElementById('recipe-modal-image').innerHTML = `<img src="${recipes.strMealThumb}" alt="Image of ${mealName}">`;
     if(recipes.strYoutube == "") {
@@ -144,8 +145,9 @@ function randomSearch(e){
 
     e.preventDefault();
 
-    console.log("random");
     document.getElementById("recipe-results").style.display = "none";
+    document.getElementById("recipe-results").querySelector("h2").style.display = "none";
+
 
     var randomReciperUrl = RANDOM_RECIPE;
 
@@ -154,7 +156,6 @@ function randomSearch(e){
         return response.json();
     })
     .then(function (data){
-        console.log(data);
 
         displayData(data)
     });
@@ -172,6 +173,7 @@ function displayData(data){
     listItem.classList.add("randomResults");
 
     listItem.innerHTML = `
+    <h2 class="random-label"> Your Random Results </h2>
     <div class="recipe-item"> 
     <div class="randomRecipeImg"><img id="imgRandomRecipe" src="${data.meals[0].strMealThumb}"></div>
     <div class="randomRecipeName">${data.meals[0].strMeal}
@@ -202,16 +204,20 @@ window.addEventListener("load", function(e) {
     }
 };
 
-function goBack() {
+// If go back button is clicked, go back to previous page
+document.addEventListener("DOMContentLoaded", function() {
+
+    function goBack() {
+        console.log("go back");
         window.history.back();
-      }
+    }
 
-    goBack();
+    goBackBtnEl.addEventListener("click", goBack);
 
+});    
 
 searchButtonEl.addEventListener("click", getRecipeResults);    
 xEl.addEventListener("click", closeRecipeModal);
 randomButtonEl.addEventListener("click", randomSearch);
-goBackBtnEl.addEventListener("click", goBack);
 
 initFoods();
