@@ -131,19 +131,6 @@ main {
     transform: scale(0.95);
 }
 
-.recipe-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    display: none;
-}
-
-.recipe-results h2 {
-    margin-bottom: 20px;
-    font-size: 30px;
-}   
-
 /* Rondom results styles */
 
 .randomResults{ 
@@ -152,13 +139,23 @@ main {
     flex-direction: column;
     list-style: none;
     align-items: center;  
-    margin: 30px; 
+    margin-top: 10px;
+}
+
+.random-label { 
+ 
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #df7716;
+    
 }
 
 .randomRecipeName{
     font-size: 20px;
     min-height: 60px;
     text-align: center;
+    width: 350px;
+    overflow-wrap: break-word;
     font-weight: 400;
     margin-bottom: 20px;
 
@@ -171,9 +168,12 @@ main {
 }
 
 #imgRandomRecipe{
-    height:300px;
-    width: 300px;
-    border-radius: 25px;
+    height: 350px;
+    width: 350px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom: none;
+
 }
 
 .randomRecipeButton {
@@ -201,10 +201,13 @@ main {
 
 .backBtn{
 
-    position: fixed;
-    bottom: 10px;
-    left: 88%;
-    width: 150px;
+    position: relative;
+    bottom: 40px;
+    float : right; 
+    font-size: 13px;
+    text-align: center;
+    width: 100px;
+    bottom: 0px;
     background: linear-gradient(45deg, #FF512F 0%, #e38e16 51%, #FF512F 100%);
     color: white;
     border-radius: 10px;
@@ -216,10 +219,14 @@ main {
 
 }
 
-.recipe-results {
+/* Recipe results styles */
 
+.recipe-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
     display: none;
-    
 }
 
 .recipe-results h2 {
@@ -325,6 +332,7 @@ main {
     transform: translate(-50%, -50%);
     overflow-y: scroll;
     display: none; 
+    z-index: 1000;
 
   }
 
@@ -405,17 +413,6 @@ a:hover {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1300px) {
-
-
-    .backBtn {
-
-        left: 50%;
-        
-    }    
-}
-
-
 @media screen and (max-width: 1156px) {
 
 
@@ -454,37 +451,18 @@ a:hover {
 
     header {
 
-        padding: 9.6rem;
         text-align: center; 
     }
 
     header h1 {
 
-        padding: 70px 0;
+        margin-top: 20px;
 
     }
 
 }
   
-
 @media screen and (max-width: 768px) {
-   
-    header {
-
-        text-align: center;
-    }
-
-    
-    header h1 span {
-
-        display: none;
-    }
-
-    header h1 {
-
-        font-size: 80px;
-
-    }
 
     .user-input {
         width: 100%;
@@ -519,8 +497,8 @@ a:hover {
 
     .backBtn {
 
-        right: 0;
-        height: 45px ;
+        margin-top: 20px;
+        bottom: 0 ;
     }
 
     .meal-name {
@@ -535,30 +513,7 @@ a:hover {
         width: 60%;
 
     }
-}
 
-@media screen and (max-width: 768px) {
-
-
-    header {
-
-        text-align: center;
-
-
-}
-    header h1 {
-
-        font-size: 30px;
-        text-align: center;
-    
-    }
-
-    .recipe-description {
-
-        width: 300px;  
-        height: 900px;  
-        margin: 0;
-    }
 
 }
 
@@ -573,12 +528,13 @@ a:hover {
 
 @media screen and (min-width: 768px) {
   
-
-    header h1 {
-        font-size: 60px;
-        text-align: center;
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40vh; 
+        
     }
-
     .recipe {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -589,38 +545,43 @@ a:hover {
         margin: 0;
     }
 
+    .recipe-description {
+
+        width: 500px;  
+        height: 700px;  
+        margin: 0;
+    }
+
 }
-
-    @media only screen and (min-width: 600px) and (max-width: 768px) {
-
-
-        header{
-
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 40px;
-            text-align: center;
-        }
-}
-
-
-    @media only screen and (min-width: 370px) and (max-width: 599px) {
-
-
-        header{
-
-            text-align: center;
-            margin: 0;
+    @media screen and (min-width: 355px) and (max-width: 768px) {
+  
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
             
         }
 
-        header h1 {
-            font-size: 35px;
+        header h1 span 
+
+        {
+            font-size: 15px;
             text-align: center;
-            margin-left: -60px;
-            
+            margin: 20px;
         }
 
+        header h1 {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+
+    .recipe-description {
+
+        width: 300px;  
+        height: 650px;  
+        margin: 0;
+    }
     }
