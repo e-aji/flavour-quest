@@ -10,7 +10,7 @@ var userInputEl = document.getElementById("user-input");
 var recipeDescriptionEl = document.getElementById("recipe-description");
 var recipeEl = document.getElementById("recipe");
 var randomButtonEl = document.getElementById("randomBtn");
-// var goBackBtnEl = document.getElementById("goBackBtn");
+var goBackBtnEl = document.getElementById("goBackBtn");
 var ingredientSearchEl = document.getElementById("ingredient-search");
 var randomResultsEl = document.getElementById("random-results");
 
@@ -72,8 +72,8 @@ function getRecipeResults(e) {
 
         userInputEl.style.display = "none";
         randomResultsEl.style.display = "none";
-        // goBackBtnEl.style.display = "block";
         recipeResultsEl.style.display = "block";
+        goBackBtnEl.style.display = "block";
 
 
         let recipe = "";
@@ -166,7 +166,7 @@ function randomSearch(e){
 
 function displayData(data){
     document.getElementById("user-input").style.display = "none";
-    // document.getElementById("goBackBtn").style.display = "block";
+    document.getElementById("goBackBtn").style.display = "block";
 
     const listItem = document.createElement("li");
     listItem.classList = document.createElement("li");
@@ -206,18 +206,22 @@ window.addEventListener("load", function(e) {
 
 // If go back button is clicked, go back to previous page
 
-// function goBack() {
+function goBack() {
+
+
+    window.location.reload();
+
 
 //     userInputEl.style.display = "flex";
 //     randomResultsEl.style.display = "none";
-//     goBackBtnEl.style.display = "none";
+//     goBackBtnEl.style.display = "block";
 //     recipeResultsEl.style.display = "none";
 
-// };    
+};    
 
 searchButtonEl.addEventListener("click", getRecipeResults);    
 xEl.addEventListener("click", closeRecipeModal);
 randomButtonEl.addEventListener("click", randomSearch);
-// goBackBtnEl.addEventListener("click", goBack);
+goBackBtnEl.addEventListener("click", goBack);
 
 initFoods();
