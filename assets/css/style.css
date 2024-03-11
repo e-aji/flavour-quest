@@ -199,7 +199,7 @@ main {
     font-weight: 600;
 }
 
-/* .backBtn{
+.backBtn{
 
     position: relative;
     bottom: 40px;
@@ -217,7 +217,7 @@ main {
     text-transform: uppercase;
     display: none;
 
-} */
+}
 
 /* Recipe results styles */
 
