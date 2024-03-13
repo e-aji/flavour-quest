@@ -198,7 +198,11 @@ main {
     border-color: #e38e16;
     font-weight: 600;
 }
-
+#noSearch{
+    font-weight: 500;
+    color: #250909;
+ 
+}
 .backBtn{
 
     position: relative;
