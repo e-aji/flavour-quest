@@ -57,7 +57,12 @@ function getRecipeResults(e) {
     var ingredientSearch = document.getElementById("ingredient-search").value.trim();
 
     if (ingredientSearch === "") {
-        return;
+        document.getElementById("noSearch").innerHTML = "Enter a valid input.";
+        setTimeout(function(){
+            document.getElementById("noSearch").innerHTML = "";
+        }, 2000);
+
+       return;
     };
 
     // Save user input in local storage
